@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+</head>
+<body>
+    <form action="" method="post" id="loginForm" novalidate="novalidate">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="username" class="username" placeholder="用户名" autocomplete="off">
+        </div>
+        <div>
+            <input type="password" name="password" class="password" placeholder="密码">
+        </div>
+        <button id="submit" type="submit">登 陆</button>
+    </form>
+     <a href="{% url 'register' %}">
+            <button type="button" class="register-tis">还有没有账号？</button>
+        </a>
+
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+</body>
+</html>

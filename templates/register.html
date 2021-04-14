@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+</head>
+<body>
+    <form action="" method="post" id="loginForm" novalidate="novalidate">
+        {% csrf_token %}
+        <form action="" method="post" id="registerForm" novalidate>
+            {% csrf_token %}
+            <div>{{ reg_obj.username }}</div>
+            <span class="text-danger">{{ reg_obj.username.errors.0 }}</span>
+
+            <div>{{ reg_obj.password }}</div>
+            <span class="text-danger">{{ reg_obj.password.errors.0 }}</span>
+
+            <button id="submit" type="submit">注 册</button>
+    </form>
+
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+</body>
+</html>
